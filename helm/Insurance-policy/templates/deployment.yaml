@@ -22,7 +22,7 @@ spec:
         environment: development
     spec:
       containers:
-        - name: "store-service-cmd-container"
+        - name: "insurance-policy-container"
           image: {{ .Values.image.repository }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
@@ -35,7 +35,7 @@ spec:
               value: "development" 
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8081
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

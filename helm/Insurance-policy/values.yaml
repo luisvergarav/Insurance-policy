@@ -1,7 +1,7 @@
 replicaCount: 1
 namespace : insurance-development
 image:
-  repository: 192.168.99.100:5000/insurance-policy/insurance-policy
+  repository: gcr.io/calm-seeker-284723/insurance-policy:v1
   tag: 
   pullPolicy: IfNotPresent
 
@@ -31,7 +31,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 8080
+  port: 8081
 
 ingress:
   enabled: false
