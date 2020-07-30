@@ -43,7 +43,7 @@ node {
 
         sh("sed -i.bak 's#192.168.99.100:5000/insurance-policy/insurance-policy#${imageTag}#' ./helm/Insurance-policy/values.yaml")
          sh ("pwd")
-        sh("/usr/local/bin/helm upgrade --install Insurance-policy ./helm/Insurance-policy --kubeconfig /var/lib/jenkins/workspace/config")
+        sh("/usr/local/bin/helm upgrade --install insurance-policy ./helm/Insurance-policy --kubeconfig /var/lib/jenkins/workspace/config")
     
       
         echo 'To access your environment run `kubectl proxy`'
