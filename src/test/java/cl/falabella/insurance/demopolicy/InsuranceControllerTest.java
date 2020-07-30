@@ -1,5 +1,6 @@
 package cl.falabella.insurance.demopolicy;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -41,11 +42,19 @@ public class InsuranceControllerTest {
 	@Test
 	public void shouldReturnOk() throws Exception {
 		PolicyRequest request = new PolicyRequest();
-
+		String rut = "1-9";
+		String email = "luis@gmail.com";
+		String phone = "123456789";
+		String birthDate = "01-01-1990";
+				
 		Mockito.when(insuranceService.getPolicies()).thenReturn(new ArrayList<Policy>());
 		
-		this.mockMvc.perform(post("/insurance/v1/policy").content(mapper.writeValueAsString(request))
-				.contentType(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk());
+		this.mockMvc.perform(get("/insurance/v1/policy")
+				.param("rut",rut)
+				.param("birthDate",birthDate)
+				.param("email",email)
+				.param("phone",phone))
+				.andDo(print()).andExpect(status().isOk());
 	}
 
 }

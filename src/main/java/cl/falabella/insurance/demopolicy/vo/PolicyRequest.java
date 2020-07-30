@@ -8,6 +8,7 @@ import lombok.Data;
  * @author lvergara
  * API Request
  */
+
 @Data
 public class PolicyRequest {
 	private String rut;
