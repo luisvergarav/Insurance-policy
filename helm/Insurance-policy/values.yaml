@@ -1,11 +1,8 @@
-# Default values for Insurance-policy.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 replicaCount: 1
-
+namespace : insurance-development
 image:
-  repository: nginx
+  repository: 192.168.99.100:5000/neargrocery/insurance-policy
+  tag: 
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -14,7 +11,7 @@ fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -33,8 +30,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: LoadBalancer
+  port: 8080
 
 ingress:
   enabled: false
