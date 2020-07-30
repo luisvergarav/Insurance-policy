@@ -1,5 +1,5 @@
 node {
-  def project = 'insurance'
+  def project = 'insurance-policy'
   def appName = 'insurance-policy'
   def feSvcName = "${appName}-backend"
   def imageTag = "192.168.99.100:5000/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
