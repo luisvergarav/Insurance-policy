@@ -6,8 +6,11 @@
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/domain/model/Promotion.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/vo/PolicyRequest.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/config/Config.java
+/home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/config/RestTemplateConfiguration.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/DemoPolicyApplication.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/vo/PolicyVO.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/domain/service/InsuranceServiceImpl.java
+/home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/repository/InsuranceRepository.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/vo/PromotionVO.java
+/home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/domain/model/LifeInsuranceList.java
 /home/lvergara/Descargas/demo-policy/src/main/java/cl/falabella/insurance/demopolicy/domain/model/LifeInsurance.java

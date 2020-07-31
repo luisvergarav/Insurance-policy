@@ -1,7 +1,5 @@
 package cl.falabella.insurance.demopolicy.domain.model;
 
-import java.math.BigDecimal;
-
 import lombok.Data;
 
 /**

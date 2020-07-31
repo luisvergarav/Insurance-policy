@@ -3,8 +3,8 @@
  */
 package cl.falabella.insurance.demopolicy.domain.service;
 
+import java.util.Date;
 import java.util.List;
-
 import cl.falabella.insurance.demopolicy.domain.model.Policy;
 
 /**
@@ -12,5 +12,5 @@ import cl.falabella.insurance.demopolicy.domain.model.Policy;
  * Insurance Service Interface
  */
 public interface InsuranceService {
-	List<Policy> getPolicies();
+	List<Policy> getPoliciesByDate(Date birthDate);
 }

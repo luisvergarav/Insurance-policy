@@ -2,6 +2,7 @@ package cl.falabella.insurance.demopolicy.controllers;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,13 +36,13 @@ public class InsuranceController {
 	@RequestMapping(path = "/insurance/v1/policy", method = GET)
 	public ResponseEntity<List<PolicyVO>> getPolicies(
 			@RequestParam  String rut,
-			@RequestParam String birthDate,
+			@RequestParam Date birthDate,
 			@RequestParam String email,
 			@RequestParam String phone) {
 		try {
 			log.info("Peticion  [Rut {}] [BirthDate {}] [Email {}] [Phone {}] ", rut,birthDate,email,phone);
 			
-			List<PolicyVO> listaPolizas = insuranceService.getPolicies().stream()
+			List<PolicyVO> listaPolizas = insuranceService.getPoliciesByDate(birthDate).stream()
 			.map(this::convertToDto).collect(Collectors.toList());
 			
 			return new ResponseEntity<List<PolicyVO>>(listaPolizas,HttpStatus.OK);	
@@ -52,9 +53,9 @@ public class InsuranceController {
 		
 	}
 	
-	private PolicyVO convertToDto(Policy policie) {
+	private PolicyVO convertToDto(Policy policy) {
 
-		return modelMapper.map(policie, LifeInsuranceVO.class);
+		return modelMapper.map(policy, LifeInsuranceVO.class);
 	   
 	}
 	
