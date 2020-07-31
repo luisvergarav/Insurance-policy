@@ -26,16 +26,26 @@ spec:
           image: {{ .Values.image.repository }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: MYSQL_HOST
+            - name: MONGO_HOST
               valueFrom:
                 configMapKeyRef:
-                  name: mysql-config
-                  key: MYSQL_HOST
+                  name: mongo-configmap
+                  key: MONGO_HOST
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: MONGO_PORT
+            - name: API_CORE_ENDPOINT
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: API_CORE_ENDPOINT
             - name: spring.profiles.active
               value: "development" 
           ports:
             - name: http
-              containerPort: 8081
+              containerPort: 8080
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -1,7 +1,7 @@
 replicaCount: 1
 namespace : insurance-development
 image:
-  repository: gcr.io/calm-seeker-284723/insurance-policy:v1
+  repository: gcr.io/calm-seeker-284723/insurance-policy:v3
   tag: 
   pullPolicy: IfNotPresent
 
